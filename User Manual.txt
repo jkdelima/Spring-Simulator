@@ -1,0 +1,23 @@
+587 Assignment 3 User Manual
+
+My source code was based on rendering tutorials given by Allan Rocha. Almost all of the work is done on the SceneShader.cpp file with the exception of naming a variable in the SceneShader.h file and allowing the switching of different models by hitting keys in the main.cpp file.
+
+I've implemented all the required models plus bonus extension one.
+
+To run the program extract the zip folder and open up a terminal and simply enter the command "./run" without the quotes. This will bring up an OpenGL Window automatically loading the first model.
+
+The user controls are simple, you just enter the number keys 1, 2, 3, 4, or 5 to switch between the following models:
+
+1 = Mass on a spring
+2 = Pendulum
+3 = Jello cube
+4 = Hanging cloth
+5 = Flag in the wind
+
+A couple other notes on my code:
+
+- I used structures for my points and springs, where the points are the two masses on each spring
+- Each spring refers to the points through indexing
+- I've implemented both air damping and spring damping, the air damping variable is the global variable b and the spring damping variables are defined for each spring
+- Each model had its rest lengths, masses and spring constants arbitrarily chosen to have a more or less realistic simulation
+- As for my bonus "flag in the wind" simulation I simply added an equal gravitational force to operate on the x-axis for my force value if option 5 is selected in my "refresh" method in the SceneShader.cpp file (this may seem like a hack but in my defense the requirement only said to simulate one of the problems and I chose the flag flapping in the wind, it also didn't say to implement a specific technique and it looks realistic enough :P)
